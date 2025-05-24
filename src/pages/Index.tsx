@@ -7,6 +7,7 @@ import BonusSection from '@/components/BonusSection';
 import DataSecurity from '@/components/DataSecurity';
 import RatingSection from '@/components/RatingSection';
 import UserReviews from '@/components/UserReviews';
+import PurchaseSection from '@/components/PurchaseSection';
 
 const Index = () => {
   return (
@@ -19,6 +20,7 @@ const Index = () => {
         <DataSecurity />
         <RatingSection />
         <UserReviews />
+        <PurchaseSection />
       </div>
     </div>
   );
