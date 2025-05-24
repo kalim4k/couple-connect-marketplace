@@ -11,7 +11,7 @@ const PurchaseSection = () => {
     
     // Simuler un délai de chargement avant la redirection
     setTimeout(() => {
-      window.open('https://quhyhlse.mychariow.com/prd_h8ilxu', '_blank');
+      window.open('https://quhyhlse.mychariow.com/prd_h8ilxu/checkout', '_blank');
       setIsLoading(false);
     }, 2000);
   };
@@ -57,7 +57,7 @@ const PurchaseSection = () => {
             <Button 
               onClick={handlePurchase}
               disabled={isLoading}
-              className="btn-gradient text-white px-12 py-4 text-xl font-bold rounded-full transform hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+              className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-12 py-4 text-xl font-bold rounded-full transform hover:scale-105 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
             >
               {isLoading ? (
                 <>
