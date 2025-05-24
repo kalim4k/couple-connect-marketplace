@@ -1,9 +1,21 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, MoreVertical, ZoomIn } from 'lucide-react';
+import { ArrowLeft, MoreVertical, ZoomIn, Loader } from 'lucide-react';
 
 const AppHeader = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handlePurchase = () => {
+    setIsLoading(true);
+    
+    // Animation de loading de 4 secondes avant redirection
+    setTimeout(() => {
+      window.open('https://quhyhlse.mychariow.com/prd_h8ilxu/checkout', '_blank');
+      setIsLoading(false);
+    }, 4000);
+  };
+
   return (
     <div className="bg-white">
       {/* Top navigation bar */}
@@ -68,10 +80,18 @@ const AppHeader = () => {
 
         {/* Purchase button */}
         <Button 
-          className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 font-medium"
-          onClick={() => window.open('https://quhyhlse.mychariow.com/prd_h8ilxu/checkout', '_blank')}
+          className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+          onClick={handlePurchase}
+          disabled={isLoading}
         >
-          Acheter l'application - 4990 FCFA
+          {isLoading ? (
+            <>
+              <Loader className="w-5 h-5 mr-2 animate-spin" />
+              Téléchargement en cours...
+            </>
+          ) : (
+            'Acheter l\'application - 4990 FCFA'
+          )}
         </Button>
       </div>
     </div>
