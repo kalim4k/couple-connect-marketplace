@@ -13,40 +13,39 @@ const ScreenshotGallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
-    <div className="bg-white py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-8">Captures d'écran</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-          {screenshots.map((screenshot, index) => (
-            <div 
-              key={index}
-              className="cursor-pointer transform hover:scale-105 transition-transform duration-300"
-              onClick={() => setSelectedImage(screenshot)}
-            >
-              <img 
-                src={screenshot} 
-                alt={`Screenshot ${index + 1}`}
-                className="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-lg"
-              />
-            </div>
-          ))}
-        </div>
-        
-        {selectedImage && (
+    <div className="bg-white px-4 py-2">
+      {/* Horizontal scroll container */}
+      <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+        {screenshots.map((screenshot, index) => (
           <div 
-            className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50"
-            onClick={() => setSelectedImage(null)}
+            key={index}
+            className="flex-shrink-0 cursor-pointer"
+            onClick={() => setSelectedImage(screenshot)}
           >
-            <div className="max-w-4xl max-h-screen p-4">
-              <img 
-                src={selectedImage} 
-                alt="Screenshot agrandi"
-                className="max-w-full max-h-full object-contain rounded-lg"
-              />
-            </div>
+            <img 
+              src={screenshot} 
+              alt={`Screenshot ${index + 1}`}
+              className="w-[180px] h-[320px] sm:w-[160px] sm:h-[280px] object-cover rounded-lg border border-gray-200"
+            />
           </div>
-        )}
+        ))}
       </div>
+      
+      {/* Modal for enlarged view */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="max-w-sm max-h-full">
+            <img 
+              src={selectedImage} 
+              alt="Screenshot agrandi"
+              className="max-w-full max-h-full object-contain rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
