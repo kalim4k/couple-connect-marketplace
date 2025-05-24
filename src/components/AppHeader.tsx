@@ -69,7 +69,7 @@ const AppHeader = () => {
         {/* Purchase button */}
         <Button 
           className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 font-medium"
-          onClick={() => window.open('https://quhyhlse.mychariow.com/prd_h8ilxu', '_blank')}
+          onClick={() => window.open('https://quhyhlse.mychariow.com/prd_h8ilxu/checkout', '_blank')}
         >
           Acheter l'application - 4990 FCFA
         </Button>
