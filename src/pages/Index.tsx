@@ -12,7 +12,7 @@ import PurchaseSection from '@/components/PurchaseSection';
 const Index = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-md mx-auto bg-white shadow-lg">
+      <div className="max-w-md mx-auto lg:max-w-4xl bg-white shadow-lg">
         <AppHeader />
         <ScreenshotGallery />
         <AppDescription />

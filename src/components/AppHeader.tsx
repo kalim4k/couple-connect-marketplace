@@ -28,16 +28,16 @@ const AppHeader = () => {
       </div>
 
       {/* App info section */}
-      <div className="p-4">
-        <div className="flex gap-4 mb-4">
+      <div className="p-4 sm:p-6">
+        <div className="flex flex-col sm:flex-row gap-4 mb-4">
           <img 
             src="https://orawin.fun/wp-content/uploads/2025/05/ENIGME.jpg" 
             alt="Couple Connect" 
-            className="w-16 h-16 rounded-xl shadow-sm"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl shadow-sm mx-auto sm:mx-0"
           />
-          <div className="flex-1">
-            <h1 className="text-xl font-medium text-gray-900 mb-1">Couple Connect</h1>
-            <div className="flex items-center gap-1 mb-1">
+          <div className="flex-1 text-center sm:text-left">
+            <h1 className="text-xl sm:text-2xl font-medium text-gray-900 mb-1">Couple Connect</h1>
+            <div className="flex items-center gap-1 mb-1 justify-center sm:justify-start">
               <span className="text-sm text-green-700">Love Games</span>
               <img src="https://easy-image.b-cdn.net/icon/verify-dev.webp" alt="" className="w-4 h-4" />
             </div>
@@ -51,7 +51,7 @@ const AppHeader = () => {
         </div>
 
         {/* Stats row */}
-        <div className="flex justify-between items-center text-center mb-4">
+        <div className="grid grid-cols-2 sm:flex sm:justify-between items-center text-center mb-6 gap-4">
           <div>
             <div className="flex items-center gap-1 justify-center">
               <span className="text-sm font-medium">4.8</span>
@@ -80,7 +80,7 @@ const AppHeader = () => {
 
         {/* Purchase button */}
         <Button 
-          className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full bg-green-600 hover:bg-green-700 text-white rounded-lg py-3 sm:py-4 font-medium disabled:opacity-70 disabled:cursor-not-allowed text-sm sm:text-base"
           onClick={handlePurchase}
           disabled={isLoading}
         >
