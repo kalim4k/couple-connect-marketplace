@@ -27,7 +27,7 @@ const ScreenshotGallery = () => {
 
   return (
     <>
-      <div className="bg-white px-4 py-6 border-t border-gray-100">
+      <div className="bg-white px-4 py-8 border-t border-gray-100">
         <Carousel className="w-full max-w-sm mx-auto md:max-w-md">
           <CarouselContent>
             {screenshots.map((screenshot, index) => (
@@ -36,7 +36,7 @@ const ScreenshotGallery = () => {
                   <img 
                     src={screenshot}
                     alt={`Capture d'écran ${index + 1}`}
-                    className="w-full h-40 md:h-48 object-contain rounded-lg shadow-sm cursor-pointer hover:opacity-90 transition-opacity bg-gray-50"
+                    className="w-full h-60 md:h-72 object-contain rounded-lg shadow-sm cursor-pointer hover:opacity-90 transition-opacity bg-gray-50"
                     onClick={() => setSelectedImage(screenshot)}
                   />
                 </div>
