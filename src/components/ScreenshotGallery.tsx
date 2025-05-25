@@ -36,7 +36,7 @@ const ScreenshotGallery = () => {
                   <img 
                     src={screenshot}
                     alt={`Capture d'écran ${index + 1}`}
-                    className="w-full h-40 md:h-48 object-cover rounded-lg shadow-sm cursor-pointer hover:opacity-90 transition-opacity"
+                    className="w-full h-40 md:h-48 object-contain rounded-lg shadow-sm cursor-pointer hover:opacity-90 transition-opacity bg-gray-50"
                     onClick={() => setSelectedImage(screenshot)}
                   />
                 </div>
