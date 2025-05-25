@@ -28,10 +28,10 @@ const ScreenshotGallery = () => {
   return (
     <>
       <div className="bg-white px-4 py-8 border-t border-gray-100">
-        <Carousel className="w-full max-w-sm mx-auto md:max-w-md">
+        <Carousel className="w-full max-w-lg mx-auto md:max-w-4xl">
           <CarouselContent>
             {screenshots.map((screenshot, index) => (
-              <CarouselItem key={index} className="basis-4/5 md:basis-1/2">
+              <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
                 <div className="p-1">
                   <img 
                     src={screenshot}
